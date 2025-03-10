@@ -1,0 +1,5 @@
+name = "my-cloudflare-worker"
+type = "javascript"
+
+[env.production]
+node_version = "18"
