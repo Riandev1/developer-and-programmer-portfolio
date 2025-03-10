@@ -1,8 +1,15 @@
 [build]
   command = "npm run build"
-  publish = ".next"  # Pasta gerada para o Next.js
-  functions = "netlify-functions"  # Para funções serverless no Netlify
-  node_bundler = "esbuild"  # Ou outro bundler, conforme necessário
+  publish = ".next"
+  functions = "netlify-functions"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"  # Necessário para Next.js no Netlify
+  package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  GO_VERSION = "1.19"
