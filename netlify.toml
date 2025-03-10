@@ -1,3 +1,8 @@
 [build]
-  command = "npm run build && npm run export"
-  publish = "out"
+  command = "npm run build"
+  publish = ".next"  # Pasta gerada para o Next.js
+  functions = "netlify-functions"  # Para funções serverless no Netlify
+  node_bundler = "esbuild"  # Ou outro bundler, conforme necessário
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"  # Necessário para Next.js no Netlify
